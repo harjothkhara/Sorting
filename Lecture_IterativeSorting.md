@@ -37,3 +37,30 @@ O(n!) - o to the n factorials are less common O(n^1,2,3,10,100,1000)
 how do we count n items in constant time? e.g big O of len(l), append() is O(1)
 
 Binary Search - split in half and keep the side that contains the value you're searching for. repeat until value is found. values must be sorted already. Time complexity ---> O(log n). This is why sorting is important b/c it allows us to do binary search
+
+sort --> binary search (practice writing binary searches)
+
+binary search is really powerful b/c it turns O(n) into O(log n). why is sorting importing? so we can do binary search. why is binary search important? so we can turn O(n) into 0(log n). what does that mean? we can turn 1B operations we need to do into 30. that's pretty fantastic!
+
+Iterative Sorting Algorithms
+
+- Insertion Sort: start with a sorted list on the left, and we have an unsorted list on the right. we take the first item from our unsorted list and we insert it into the correct place in our sorted list. we repeat this for the next item until we have all our items in the sorted list.
+
+Insertion Sort:
+l = [5,3,1,6]
+
+i = 1
+temp = 3
+j = 1
+
+def insertion_sort(list):
+for i in range(1,len(list)):
+
+        temp = list[i]
+
+        j = i
+        while j > 0 and temp < list[j-1]:
+            list[j] = list[j-1]
+            j -=1
+        list[j] = temp
+    return list
