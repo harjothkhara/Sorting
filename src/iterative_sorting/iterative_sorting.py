@@ -1,22 +1,36 @@
 # TO-DO: Complete the selection_sort() function below
+# Selection Sort: During each iteration select the smallest item from the unsorted partition and move it to the the sorted partition.
 
 
-def selection_sort(arr):
+#     b. Swap the element at current index with the smallest element found in above loop
+list = [4, 8, 3, 5]
+
+
+def selection_sort(list):
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
+    # i --> 0-2, don't iterate thru final index as the left side would've been sorted by then.
+     # Start with current index = 0
+    # 2.For all indices EXCEPT the last index:
+    for i in range(0, len(list) - 1):
         cur_index = i
-        smallest_index = cur_index
+        for j in range(i+1, len(list)):
+            # Loop through elements on right-hand-side of current index and find the smallest element
+            if list[j] < list[cur_index]:
+                cur_index = j  # swap index
+        if cur_index != i:
+             # swap values
+            list[i], list[cur_index] = list[cur_index], list[i]
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
 
-        # TO-DO: swap
+    return list
 
-    return arr
 
+print(selection_sort(list))
 
 # TO-DO:  implement the Bubble Sort function below
 
-arr = [2, 1, 8, 7, 6, 5]
+#list = [2, 1, 8, 7, 6, 5]
 
 # i = 0 j = 0,1,2,3,4 ---> [1, 2, 7, 6, 5, ..., 8]
 # i = 1 j = 0,1,2,3 ---> [1, 2, 6, 5... 7, 8]  # no need to compare 7 & 8 (8 already max)
