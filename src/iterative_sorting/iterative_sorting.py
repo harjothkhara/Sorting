@@ -3,7 +3,10 @@
 
 
 #     b. Swap the element at current index with the smallest element found in above loop
-list = [4, 8, 3, 5]
+list = [3, 8, 4, 5]
+i=1
+cur_index=2 # tracking min index in each iteration of i
+j=2 # scanning values looking for min
 
 
 def selection_sort(list):
@@ -41,9 +44,10 @@ print(selection_sort(list))
 # i through each iteration is controlling the ordered vs unordered border
 # j is going through the unorderedlist (on the left) and comparing neighboring items amd swaping them
 
-# i = 0
-# j = 0
+i = 1
+j = 4
 
+arr = [2, 1, 7, 5, 8, 9]
 
 def bubble_sort(arr):
     # Loop through your array. Not including the last sorted item on the right at -1 - i
@@ -57,7 +61,8 @@ def bubble_sort(arr):
     return arr
 
 
-# print(bubble_sort(arr))
+
+print(bubble_sort(arr))
 # Big O notation, tells us how the amount of operations our algorithm requires will grow as the size of our input grows. Bubble sort is O(n^2) time complexity.
 
 # STRETCH: implement the Count Sort function below
