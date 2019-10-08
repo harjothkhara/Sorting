@@ -64,3 +64,5 @@ for i in range(1,len(list)):
             j -=1
         list[j] = temp
     return list
+
+Bubble Sort:
